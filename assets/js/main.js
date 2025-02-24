@@ -4,6 +4,19 @@
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 */
 
+const myAge = document.getElementById('age');
+
+// Update span with current age:
+myAge.textContent = `${calculateAge()}`;
+
+// Calculate my age
+function calculateAge(){
+	const birthday = Date.parse("January 24, 1997 00:00:00"); // In milliseconds sinds epoch 1970
+	const today = Date.now(); // In milliseconds sinds epoch 1970
+	const age = Math.floor((today-birthday)/1000/60/60/24/365.25); 
+	return age;
+}
+
 // Read more, read less: https://www.w3schools.com/howto/howto_js_read_more.asp
 function readMore(section, link, arrow) {
 	var dots = document.getElementById("dots");
